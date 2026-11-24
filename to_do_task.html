@@ -5,48 +5,72 @@
     <title>To-Do List</title>
     <link rel="stylesheet" href="to_do_task.css">
   </head>
+  
   <body>
-    <header>
+    <main>
+      <header>
       <h1>To-Do List</h1>
     </header>
-    <main>
+
+      <form>
         <input type="text" id="taskInput" placeholder="What needs to be done?" required/>
-        <input type="number" id="hours"/>
+        <input type="number" value="0" min="0" id="hours"/>
 
-        <button id="add_button" type="button">Add</button>
+        <button type="button" class="add_button">Add</button>
+      </form>
 
+      <div class="filter-row">
         <nav>
-            <p><a href="#all">All | </a><a href="#active">Active | </a><a href="#completed">Completed</a></p>
+            <button type="button" class="selected">All</button>
+            <button type="button" class="active">Active</button>
+            <button type="button" class="completed">Completed</button>
         </nav>
 
-        <button id="all_done_button" type="button">Mark All Done</button>
+        <button type="button" class="mark-all-done">Mark All Done</button>
+      </div>
 
-        <section id="all">
-            
-        </section>
+      <section id="task_list">
 
-        <section id="active">
+          <div class="task">
+              <input type="checkbox" id="task1"/>
+              <label for="task1">Reply to emails</label>
+              <span class="difficulty easy">Easy · 1h</span>
+              <button type="button" class="delete_button">×</button>
+          </div>
 
-        </section>
+          <div class="task">
+              <input type="checkbox" id="task2"/>
+              <label for="task2">Fix login bug</label>
+              <span class="difficulty medium">Medium · 4h</span>
+              <button type="button" class="delete_button">×</button>
+          </div>
 
-        <section id="completed">
+          <div class="task">
+              <input type="checkbox" id="task3"/>
+              <label for="task3">Build reports page</label>
+              <span class="difficulty hard">Hard · 6h</span>
+              <button type="button" class="delete_button">×</button>
+          </div>
 
-        </section>
+          <div class="task">
+              <input type="checkbox" id="task4" checked/>
+              <label for="task4">Plan sprint</label>
+              <span class="difficulty easy">Easy · 2h</span>
+              <button type="button" class="delete_button">×</button>
+          </div>
 
-        <section>
-            <input type="checkbox" id="task1"/>
-            <label for="task1">Task 1</label>
-            <input type="checkbox" id="task2"/>
-            <label for="task2">Task 2</label>
-            <input type="checkbox" id="task3"/>
-            <label for="task3">Task 3</label>
-        </section>
+      </section>
 
         <footer>
-            <p>Items Selected: <span id="item_count">0</span></p>
-            <p>Total Hours: <span id="total_hours">0</span></p>
-            <button id="clear_completed_button" type="button">Clear Completed</button>
+            <p>3 items left · 11 hours total</p>
+            <button type="button" class="clear-completed">Clear completed</button>
         </footer>
+
+        <div class="hint">
+          <p>Easy: up to 2h · Medium: over 2h · Hard: over 5h.</p>
+          <p>Double-click a task or its label to edit the text or hours. Press Enter to save, Esc to cancel.</p>
+        </div>
+
     </main>
   </body>
 </html>
